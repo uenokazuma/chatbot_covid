@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Covid - Q&A Chat{% endblock %}</title>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    {% block extra_css %}{% endblock %}
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    {% block extra_js %}{% endblock %}
+  </head>
+  <body>
+    <div id="main">{% block main %}{% endblock %}</div>
+    {% block form %}{% endblock %}
+  </body>
+</html>
