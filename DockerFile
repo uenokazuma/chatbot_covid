@@ -8,11 +8,15 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
 
+RUN apt-get update && apt-get -y install gcc
+RUN pip install virtualenv
 COPY . /usr/src/app
 
-RUN docker run -p 6379:6379 -d redis:5
+RUN virtualenv venv
+RUN . venv/bin/activate
+RUN pip install -r requirements.txt
+
 
 EXPOSE 8000
 
